@@ -1,0 +1,64 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/sp/column-formatting.schema.json",
+    "elmType": "div",
+    "style": {
+      "font-size": "16px"
+    },
+    "children": [
+      {
+        "elmType": "span",
+        "attributes": {
+          "title": "Compliance",
+          "iconName": "SecurityGroup",
+          "class": "='ms-fontColor-' + if(indexOf(join(@currentField,''),'Compliance') != -1, 'themeDark', 'neutralLight')"
+        },
+        "style": {
+          "padding": "0 4px"
+        }
+      },
+      {
+        "elmType": "span",
+        "attributes": {
+          "title": "Management",
+          "iconName": "Org",
+          "class": "='ms-fontColor-' + if(indexOf(join(@currentField,''),'Management') != -1, 'themeDark', 'neutralLight')"
+        },
+        "style": {
+          "padding": "0 4px"
+        }
+      },
+      {
+        "elmType": "span",
+        "attributes": {
+          "title": "Productivity",
+          "iconName": "Processing",
+          "class": "='ms-fontColor-' + if(indexOf(join(@currentField,''),'Productivity') != -1, 'themeDark', 'neutralLight')"
+        },
+        "style": {
+          "padding": "0 4px"
+        }
+      },
+      {
+        "elmType": "span",
+        "attributes": {
+          "title": "Scale",
+          "iconName": "ScaleVolume",
+          "class": "='ms-fontColor-' + if(indexOf(join(@currentField,''),'Scale') != -1, 'themeDark', 'neutralLight')"
+        },
+        "style": {
+          "padding": "0 4px"
+        }
+      },
+      {
+        "elmType": "span",
+        "attributes": {
+          "title": "Quick Win",
+          "iconName": "LightningBolt",
+          "class": "='ms-fontColor-' + if(indexOf(join(@currentField,''),'Quick Win') != -1, 'themeDark', 'neutralLight')"
+        },
+        "style": {
+          "padding": "0 4px"
+        }
+      }
+    ]
+  }

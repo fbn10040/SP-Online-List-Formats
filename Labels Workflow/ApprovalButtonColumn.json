@@ -1,0 +1,25 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/sp/v2/column-formatting.schema.json",
+  "elmType": "div",
+  "children": [
+    {
+      "elmType": "div",
+      "txtContent": "=if(@currentField == 'Not Started', '',''"
+    },
+    {
+      "elmType": "button",
+      "txtContent": "Get Approval",
+      "customRowAction": {
+        "action": "executeFlow",
+        "actionParams": "{\"id\": \"40a6675d-f631-4774-9a02-a02a0f000dfa\"}"
+      },
+      "style": {
+        "background-color": "#6db33f",
+        "color": "white",
+        "padding": "8px",
+        "border-style": "none",
+        "display": "=if(@currentField == 'Not Started', 'inherit', if(@currentField == 'Rejected','inherit','none'"
+      }
+    }
+  ]
+}

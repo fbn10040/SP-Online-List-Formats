@@ -1,0 +1,351 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/sp/view-formatting.schema.json",
+    "hideSelection": true,
+    "hideListHeader": true,
+    "rowFormatter": {
+      "elmType": "div",
+      "style": {
+        "display": "flex",
+        "flex-wrap": "wrap",
+        "align-items": "stretch",
+        "padding": "8px",
+        "margin-bottom": "16px",
+        "max-width": "930px",
+        "border-radius": "8px",
+        "box-shadow": "4px 4px 8px darkgrey"
+      },
+      "attributes": {
+        "class": "ms-bgColor-neutralLighter"
+      },
+      "children": [
+        {
+          "elmType": "div",
+          "style": {
+            "flex-grow": "1",
+            "display": "flex",
+            "flex-wrap": "wrap",
+            "align-items": "stretch",
+            "max-width": "310px"
+          },
+          "children": [
+            {
+              "elmType": "div",
+              "style": {
+                "flex": "none"
+              },
+              "children": [
+                {
+                  "elmType": "div",                  
+                  "style": {
+                    "width": "100px",
+                    "height": "100px",
+                    "overflow": "hidden",
+                    "border-radius": "50%",
+                    "margin-right": "8px"
+                  },
+                  "children": [
+                    {
+                      "elmType": "img",
+                      "attributes": {
+                        "src": "=if([$Picture] == '', @currentWeb + '/_layouts/15/userphoto.aspx?size=L&username='+[$User.email], [$Picture])",
+                        "title": "=if([$Picture] == '', [$User.title], [$Picture.desc])"
+                      },
+                      "style": {
+                        "position": "relative",
+                        "top": "50%",
+                        "left": "50%",
+                        "width": "100%",
+                        "height": "auto",
+                        "margin-left": "-50%",
+                        "margin-top": "-50%"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "elmType": "div",
+              "style": {
+                "flex-grow": "1",
+                "display": "flex",
+                "flex-direction": "column",
+                "flex-wrap": "nowrap",
+                "align-items": "stretch",
+                "max-width": "200px"
+              },
+              "children": [
+                {
+                  "elmType": "div",
+                  "style": {
+                    "flex-grow": "1"
+                  },
+                  "children": [
+                    {
+                      "elmType": "span",
+                      "defaultHoverField": "[$User]",
+                      "txtContent": "[$User.title]",
+                      "style": {
+                        "display": "block"
+                      },
+                      "attributes": {
+                        "class": "ms-fontSize-l ms-fontWeight-semibold ms-fontColor-neutralPrimary"
+                      }
+                    },
+                    {
+                      "elmType": "span",
+                      "txtContent": "[$User.jobTitle]",
+                      "style": {
+                        "display": "=if([$User.jobTitle] == '', 'none', 'block')"
+                      },
+                      "attributes": {
+                        "class": "ms-fontSize-m ms-fontWeight-regular ms-fontColor-neutralSecondary"
+                      }
+                    },
+                    {
+                      "elmType": "span",
+                      "txtContent": "[$Family]",
+                      "style": {
+                        "display": "=if([$Family] == '', 'none', 'block')"
+                      },
+                      "attributes": {
+                        "class": "ms-fontWeight-semibold ms-fontSize-m"
+                      }
+                    },
+                    {
+                        "elmType": "a",
+                        "style": {
+                          "display": "block",
+                          "width": "100%",
+                          "margin-top":"5px"
+                        },
+                        "attributes": {
+                          "class": "ms-fontSize-xs ms-fontWeight-regular ms-fontColor-neutralPrimary ms-fontColor-themePrimary--hover",
+                          "href": "='mailto:' + [$User.email] + '?body=Dear ' + [$Title] + ',\r\n'"
+                        },
+                        "children": [
+                          {
+                            "elmType": "span",
+                            "attributes": {
+                              "iconName": "Mail",
+                              "class": "ms-fontColor-themePrimary"
+                            },
+                            "style": {
+                              "padding-right": "6px"
+                            }
+                          },
+                          {
+                            "elmType": "span",
+                            "txtContent": "[$User.email]"
+                          }
+                        ]
+                      },
+                      {
+                        "elmType": "span",
+                        "style": {
+                          "display": "=if([$Phone] == '', 'none', 'block')",
+                          "width": "100%",
+                          "margin-top":"5px"
+                        },
+                        "attributes": {
+                          "class": "ms-fontSize-xs ms-fontWeight-regular ms-fontColor-neutralPrimary"
+                        },
+                        "children": [
+                          {
+                            "elmType": "span",
+                            "attributes": {
+                              "iconName": "Phone",
+                              "class": "ms-fontColor-themePrimary"
+                            },
+                            "style": {
+                              "padding-right": "6px"
+                            }
+                          },
+                          {
+                            "elmType": "span",
+                            "txtContent": "[$Phone]"
+                          }
+                        ]
+                      },
+                      {
+                        "elmType": "a",
+                        "style": {
+                          "display": "block",
+                          "width": "100%",
+                          "margin-top":"5px"
+                        },
+                        "attributes": {
+                          "class": "ms-fontSize-xs ms-fontWeight-regular ms-fontColor-neutralPrimary ms-fontColor-themePrimary--hover",
+                          "href": "='https://teams.microsoft.com/l/chat/0/0?users=' + [$User.email]",
+                          "target": "_blank"
+                        },
+                        "children": [
+                          {
+                            "elmType": "span",
+                            "attributes": {
+                              "iconName": "TeamsLogo",
+                              "class": "ms-fontColor-themePrimary"
+                            },
+                            "style": {
+                              "padding-right": "6px"
+                            }
+                          },
+                          {
+                            "elmType": "span",
+                            "txtContent": "Start chat"
+                          }
+                        ]
+                      }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "elmType": "div",
+          "style": {
+            "flex-grow": "1",
+            "display": "flex",
+            "flex-direction": "column",
+            "max-width": "310px",
+            "min-width": "155px"
+          },
+          "children": [
+            {
+              "elmType": "div",
+              "style": {
+                "flex-grow": "1"
+              },
+              "children": [
+                {
+                  "elmType": "span",
+                  "style": {
+                    "display": "block"
+                  },
+                  "attributes": {
+                    "class": "ms-fontWeight-semibold ms-fontSize-m"
+                  },
+                  "txtContent": "Product Responsibilities:"
+                },
+                {
+                  "elmType": "span",
+                  "style": {
+                    "display": "=if([$Responsibilities] == '', 'none', 'block')",
+                    "padding-left": "8px"
+                  },
+                  "txtContent": "[$Responsibilities]",
+                  "attributes": {
+                    "class": "ms-fontSize-s ms-fontWeight-regular ms-fontColor-neutralSecondary"
+                  }
+                }
+              ]
+            },
+            {
+              "elmType": "div",
+              "style": {
+                "flex": "none",
+                "display": "flex",
+                "flex-direction": "row-reverse",
+                "flex-wrap": "nowrap"
+              },
+              "children": [
+                {
+                  "elmType": "button",
+                  "customRowAction": {
+                    "action": "share"
+                  },
+                  "attributes": {
+                    "title": "Share",
+                    "class": "ms-fontColor-neutralPrimary ms-fontColor-themePrimary--hover"
+                  },
+                  "style": {
+                    "border": "none",
+                    "background-color": "transparent",
+                    "cursor": "pointer"
+                  },
+                  "children": [
+                    {
+                      "elmType": "span",
+                      "attributes": {
+                        "iconName": "Share"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "elmType": "button",
+                  "customRowAction": {
+                    "action": "delete"
+                  },
+                  "attributes": {
+                    "title": "Delete",
+                    "class": "ms-fontColor-neutralPrimary ms-fontColor-red--hover"
+                  },
+                  "style": {
+                    "border": "none",
+                    "background-color": "transparent",
+                    "cursor": "pointer"
+                  },
+                  "children": [
+                    {
+                      "elmType": "span",
+                      "attributes": {
+                        "iconName": "Delete"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "elmType": "button",
+                  "customRowAction": {
+                    "action": "editProps"
+                  },
+                  "attributes": {
+                    "title": "Edit",
+                    "class": "ms-fontColor-neutralPrimary ms-fontColor-themePrimary--hover"
+                  },
+                  "style": {
+                    "border": "none",
+                    "background-color": "transparent",
+                    "cursor": "pointer"
+                  },
+                  "children": [
+                    {
+                      "elmType": "span",
+                      "attributes": {
+                        "iconName": "Edit"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "elmType": "button",
+                  "customRowAction": {
+                    "action": "defaultClick"
+                  },
+                  "attributes": {
+                    "title": "See more details",
+                    "class": "ms-fontColor-neutralPrimary ms-fontColor-themePrimary--hover"
+                  },
+                  "style": {
+                    "border": "none",
+                    "background-color": "transparent",
+                    "cursor": "pointer"
+                  },
+                  "children": [
+                    {
+                      "elmType": "span",
+                      "attributes": {
+                        "iconName": "ContactInfo"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }

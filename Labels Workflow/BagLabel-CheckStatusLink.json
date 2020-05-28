@@ -1,0 +1,18 @@
+{
+   "$schema": "https://developer.microsoft.com/json-schemas/sp/v2/column-formatting.schema.json",
+   "elmType": "div",
+   "children":[
+		{
+		   "elmType": "div",
+			"txtContent": ""
+		},
+		{
+		   "elmType": "a",
+			"txtContent": "=if(length(@currentField) == 0, '','Check status'",
+			"attributes": {
+			  "target": "_blank",
+			  "href": "='https://pahc.sharepoint.com/sites/LabelsDev/Lists/Approvals%20History/AllItems.aspx?FilterField1=LinkTitle&FilterType1=Computed&viewid=291a9b52%2Da74d%2D4135%2D925e%2D4d8bbcbf9c05&FilterValue1=' + @currentField"
+			}
+		}
+   ]
+}

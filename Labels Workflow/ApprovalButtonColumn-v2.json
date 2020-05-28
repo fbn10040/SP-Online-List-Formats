@@ -1,0 +1,26 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/sp/v2/column-formatting.schema.json",
+  "elmType": "div",
+  "children": [
+    {
+      "elmType": "div",
+      "txtContent": "=if(@currentField == 'Not Started', '',''"
+    },
+    {
+      "elmType": "button",
+      "txtContent": "=if(@currentField == 'In Progress', 'Cancel','Get Approval'",
+      "customRowAction": {
+        "action": "executeFlow",
+        "actionParams": "=if(@currentField == 'In Progress', '{\"id\": \"f4f372bb-ed43-4932-9dac-bfd4f34373eb\"}','{\"id\": \"40a6675d-f631-4774-9a02-a02a0f000dfa\"}'"
+      },
+      "style": {
+        "background-color": "=if(@currentField == 'In Progress', '#e25f5f','#6db33f'",
+        "color": "white",
+        "padding": "8px",
+        "width": "100px",
+        "border-style": "none",
+        "display": "=if(@currentField == 'Approved', 'none', 'inherit'"
+      }
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+	"$schema": "https://developer.microsoft.com/json-schemas/sp/v2/column-formatting.schema.json",
+	"elmType": "a",
+	"txtContent": "@currentField",
+	"attributes": {
+	   "target": "_blank",
+	   "href": "='https://pahc.sharepoint.com/sites/LabelsDev/Lists/Approvals%20History/AllItems.aspx?newTargetListUrl=%2Fsites%2FLabelsDev%2FLists%2FApprovals%20History&viewpath=%2Fsites%2FLabelsDev%2FLists%2FApprovals%20History%2FAllItems%2Easpx&FilterField1=LinkTitle&FilterValue1=' + @currentField"
+	}
+ }
