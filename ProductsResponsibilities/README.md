@@ -8,7 +8,7 @@ Required columns below:
 |--|--|
 | Single line of text | Title |
 | Single line of text | Phone |
-| Single line of text | Picture |
+| Picture | Picture |
 | People (single) | User |
 | Single line of text | Family |
 | Single line of text | Responsibilities |
